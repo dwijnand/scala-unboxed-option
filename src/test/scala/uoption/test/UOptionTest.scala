@@ -3,12 +3,12 @@ package uoption.test
 // this import is the price to pay to use UOptions
 import uoption._
 
-import org.scalatest._
+import verify._
 
-class UOptionTest extends FunSuite {
+class UOptionTest extends BasicTestSuite {
   test("caveats ==") {
-    assert(USome(5) == 5)
-    assert(USome(USome(4)) == 4)
+    assert(USome(5) equals 5)
+    assert(USome(USome(4)) equals 4)
   }
 
   test("caveats isInstanceOf") {
