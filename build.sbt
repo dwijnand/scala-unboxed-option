@@ -1,7 +1,7 @@
 // shadow sbt-scalajs' crossProject and CrossType from Scala.js 0.6.x
 import sbtcrossproject.CrossPlugin.autoImport.{crossProject, CrossType}
 
-crossScalaVersions in ThisBuild := Seq("0.17.0-RC1", "2.12.8", "2.11.12")
+crossScalaVersions in ThisBuild := Seq("0.21.0-RC1", "2.12.8", "2.11.12")
 scalaVersion in ThisBuild := crossScalaVersions.value.head
 
 lazy val `scala-unboxed-option` = crossProject(JSPlatform, JVMPlatform).
@@ -18,6 +18,6 @@ lazy val `scala-unboxed-option` = crossProject(JSPlatform, JVMPlatform).
       "-encoding", "utf8"
     ),
 
-    libraryDependencies += "com.eed3si9n.verify" %%% "verify" % "0.1.0" % Test,
+    libraryDependencies += "com.eed3si9n.verify" %%% "verify" % "0.2.0" % Test,
     scalacOptions in Test -= "-Xfatal-warnings"
   )
